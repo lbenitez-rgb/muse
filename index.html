@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSE | Web </title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #800020;
+    color: #F2E5C6;
+    padding-top: 80px;
+}
+
+/* NAV GENERAL */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* CAJA CENTRADA */
+.nav-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  max-width: 1100px;
+  padding: 20px 20px;
+  background: #F2E5C6; /* tu color */
+  border-radius: 43px;
+  gap: 40px;
+}
+
+/* LOGO */
+.logo {
+  width: 50px;
+   border-radius: 50%; /* esto lo hace redondo */
+  object-fit: cover; 
+}
+
+/* MENÚ */
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #A4133C;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* BOTÓN SOLICITAR PRESUPUESTO */
+.nav-btn {
+  background: white;
+  color: #A4133C;
+  padding: 15px 22px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  margin-left: 60px;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nav-btn {
+  display: inline-block;
+  margin-top: 30px;
+  background: #FF758F;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #A4133C;
+}
+/* SECCIONES */
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 42px;
+    color: #FF758F;
+}
+.section h3 {
+  font-size: 20px;
+  text-align: left;
+  color: #800020;
+}
+.section h4 {
+  font-size: 16px;
+  color: #800020;
+  text-align: left;
+}
+.section p {
+    font-size: 16px;
+    color: #f0ddb1;
+}
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    justify-content: center;
+}
+
+
+input, textarea {
+    padding: 12px;
+    border-radius: 16px;
+    border: 3px solid #c6f2c8;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FF758F;
+    color: #f2e5c6;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/*PRECIOS*/
+.pricing {
+  text-align: left;
+  padding: 80px 20px;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  
+}
+
+/* TARJETAS PRECIOS */
+.price-card {
+  width: 290px;
+  padding: 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+  background: #F2E5C6;
+}
+
+.price-card h4 {
+  font-size: 28px;
+  color: #800020;
+  margin: 5px 0 15px 0;
+}
+
+.price-card h5 {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #800020;
+    text-align: left;
+}
+.price-card h6 {
+  font-size: 14px;
+  text-align: left;
+  color: #FF758F;
+  margin: 0;
+}
+/* BOTÓN */
+.price-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #FF758F;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  margin: auto;
+
+}
+
+/* TEXTO INICIO */
+.hero-text {
+  max-width: 600px;
+  margin-left: 60px;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+/* IMAGEN INICIO */
+.hero-img img {
+  width: 850px;
+  margin: 0 80px;
+}
+
+/* MEJORAR CARDS */
+.card {
+  background: #F2E5C6; 
+  color: #800020;
+  padding: 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* HOVER PRO */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: #F2E5C6;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* TEXTO SERVICIO */
+.card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* LISTA SERVICE*/
+.card ul {
+  padding-left: 18px;
+  text-align: left;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* GRID */
+.portfolio-container {
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px; 
+  justify-content: center;
+}
+
+/* overlay aesthetic */
+.card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* CONTENIDO */
+.card-content {
+  padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.btn, .btn-outline {
+  flex: 1;
+  text-align: center;
+}
+/* BOTON PRINCIPAL */
+.btn {
+  background: #a4133c;
+  color: #f2e5c6;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* BOTON SECUNDARIO */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #a4133c;
+  color: #a4133c;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #a4133c;
+  color: #fff;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  background: #a4133c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 999;
+}
+
+.slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease;
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.slide {
+  min-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 120px 0px 30px 60px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+@media (max-width: 768px){
+
+  .hero-container{
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-text{
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  .hero-text h1{
+    font-size: 40px;
+  }
+
+  .hero-img img{
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+  .nav-box{
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .menu{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-box">
+
+    <img src="LOGO.png" class="logo">
+
+    <div class="menu">
+      <a href="#">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1>Diseño Web, Branding y Redes Sociales para negocios</h1>
+     <p>Ayudamos a emprendedores y pequeñas empresas a verse profesionales, organizar su presencia digital y atraer más clientes mediante diseño web, identidad visual y estrategias para redes sociales.</p>
+      <p>Si sentís que es momento de ordenar, profesionalizar y potenciar tu marca, estamos para acompañarte.</p>
+    </div>
+    
+    <div class="hero-img">
+      <img src="hero.png" alt="">
+    </div>
+ 
+  </div>
+  <a href="https://wa.me/5491166310484" class="nav-btn">Solicitar presupuesto</a>   
+</section>
+
+<section id="servicios" class="section">
+    <h2>SERVICIOS</h2>
+
+    <p class="subtitle">ESTOS SON LOS SERVICIOS QUE SE OFRECEN PARA QUE TU NEGOCIO SE VEA PROFESIONAL Y TENGA UNA ESTRATEGIA DE MARKETING BIEN PENSADA</p>
+   
+    <div class="grid">
+
+        <div class="card">
+        
+          <h3>PÁGINAS WEB</h3>
+        <h4>Diseño de sitios modernos pensados para mostrar tu negocio de forma clara y convertir visitas en clientes.</p>
+      <ul>
+        <li>Diseño personalizado</li>
+        <li>Adaptado a cualquier dispositivo</li>
+        <li>Botones de contacto directos</li>
+        <li>Optimización básica </li>
+      </ul>
+    </div>
+
+        <div class="card">
+          
+          <h3>CONTENIDO DE REDES</h3>
+           <h4>Diseños estratégicos para redes sociales que generen impacto, se vea organizado y mantenga una estética profesional.</p>
+      <ul>
+        <li>Posts y videos diseñados</li>
+        <li>Feed armónico</li>
+        <li>Estilo visual definido</li>
+        <li>Plantillas reutilizables</li>
+      </ul>
+        </div>
+
+        <div class="card">
+          
+          <h3>IDENTIDAD DE MARCA</h3>
+          <h4>Creación de una imagen visual sólida que represente tu negocio y lo haga destacar.</p>
+      <ul>
+        <li>Diseño de logo</li>
+        <li>Paleta de colores</li>
+        <li>Tipografías</li>
+        <li>Manual básico de marca</li>
+      </ul>
+        </div>
+
+        <div class="card">
+          
+          <h3>GESTIÓN DE REDES</h3>
+      <h4>Administración estratégica de tus redes para crecer, atraer clientes y mantener actividad constante.</p>
+      <ul>
+        <li>Planificación de contenido</li>
+        <li>Publicaciones</li>
+        <li>Interacción con seguidores</li>
+        <li>Análisis de resultados</li>
+      </ul>
+    </div>
+    </div>
+</section>
+
+
+<section id="portfolio" class="section"> 
+  <h2>PORTFOLIO</h2>
+  <p class="subtitle">Algunos de nuestros trabajos</p>
+
+  <div class="portfolio-container">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="salon1.png">
+      <div class="card-content">
+        <h3>TIENDA ONLINE</h3>
+        <div class="buttons">
+        <button onclick="openModal(0)" class="btn">Vista previa</button>
+        <a href="https://wa.me/5491166310484" class="btn-outline">Pedir presupuesto</a>
+</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="cafe1.png">
+      <div class="card-content">
+        <h3>CAFETERIA</h3>
+        <div class="buttons">
+        <button onclick="openModal(1)" class="btn">Vista previa</button>
+        <a href="https://wa.me/5491166310484" class="btn-outline">Pedir presupuesto</a>
+</div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <img src="res1.png">
+      <div class="card-content">
+        <h3>RESTAURANTE</h3>
+        <div class="buttons">
+        <button onclick="openModal(2)" class="btn">Vista previa</button>
+        <a href="https://wa.me/5491166310484" class="btn-outline">Pedir presupuesto</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <div class="slider" id="slider"></div>
+
+    <button class="prev" onclick="changeSlide(-1)">❮</button>
+    <button class="next" onclick="changeSlide(1)">❯</button>
+ </div>
+</section>
+   
+<section id="pricing"class="section">
+  <h2>Planes</h2>
+  <p class="subtitle">Elegí el plan ideal para tu negocio</p>
+
+  <div class="pricing-container">
+
+    <div class="price-card">
+      <h3>PLAN BÁSICO</h3>
+      <h5>El plan básico está pensado para quienes recién comienzan y necesitan dar sus primeros pasos en el mundo digital.</h5>
+      <h6>Precio estimado</h6>
+      <h4>$15.000 a $25.000</h4>
+      <h6>INCLUYE</h6>
+      <h5>Página simple (1 a 3 secciones)</h5>
+      <h5>Diseño responsive</h5>
+      <h5>Formulario de Contacto</h5>  
+      <h5>Integración Con Instagram</h5>
+      <h5>1 Post para redes</h5>
+      <h5>Entrega estimada: 5 a 10 dias</h5>
+      <a href="https://wa.me/5491166310484?text=Hola,%20me%20interesa%20el%20Plan%20Básico%20de%20MUSE." class="btn">ELEGIR PLAN</a>
+    </div>
+
+    <div class="price-card">
+      <h3>PLAN PRO</h3>
+      <h5>El plan Pro está diseñado para negocios que buscan crecer y destacarse en el entorno digital.</h5>
+      <h6>Precio estimado</h6>
+      <h4>$30.000 a $45.000</h4>
+      <h6>INCLUYE</h6>
+      <h5>Web Media (4 o 5 secciones)</h5>
+      <h5>Diseño  Personalizado</h5>
+      <h5>Logo profesional</h5>
+      <h5>Botón de Whatsapp</h5>
+      <h5>Formulario de contacto</h5>
+      <h5>Catálogo Simple</h5>
+      <h5>3 Post + 1 Reel</h5>
+      <h5>Entrega estimada: 10 a 15 dias</h5>
+      <a href="https://wa.me/5491166310484?text=Hola,%20me%20interesa%20el%20Plan%20Pro%20de%20MUSE." class="btn">ELEGIR PLAN</a>
+    </div>
+
+    <div class="price-card">
+      <h3>PLAN PREMIUM</h3>
+      <h5>El plan Premium está orientado a marcas que buscan una solución completa y profesional.</h5>
+      <h6>Precio estimado</h6>
+      <h4>$50.000 a $75.000</h4>
+      <h6>INCLUYE</h6>
+      <h5>Sitio web completo</h5>
+      <h5>Identidad visual Completa</h5>
+      <h5>Catálogo profesional</h5>
+      <h5>Plantillas para redes</h5>
+      <h5>6 Post + 3 Reels</h5>
+      <h5>Soporte post-entrega</h5>
+      <h5>Entrega estimada: 
+        20 a 30 dias</h5>
+      <a href="https://wa.me/5491166310484?text=Hola,%20me%20interesa%20el%20Plan%20Premium%20de%20MUSE." class="btn">ELEGIR PLAN</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="section">
+<h2>¿Listo para mejorar tu marca?</h2>
+<p>Contanos sobre tu proyecto y te enviaremos una propuesta personalizada.</p>
+<a href="https://wa.me/5491166310484?text=Hola%20MUSE,%20quiero%20información%20sobre%20sus%20servicios."class="nav-btn">
+Hablar por WhatsApp
+</a>
+</section>
+
+<a href="https://wa.me/5491166310484" class="whatsapp">💬</a>
+
+<script>
+let currentIndex = 0;
+let currentImages = [];
+
+// PROYECTOS (4 cards, 3 imágenes cada una)
+const projects = [
+  ["salon1.png", "salon2.png", "salon3.png"],
+  ["cafe1.png", "cafe2.png", "cafe3.png"],
+  ["res1.png", "res2.png", "res3.png"],
+]
+
+function openModal(index) {
+  document.getElementById("modal").style.display = "block";
+  document.body.style.overflow = "hidden";
+
+  currentImages = projects[index];
+  currentIndex = 0;
+
+  loadSlider();
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+function loadSlider() {
+  const slider = document.getElementById("slider");
+  slider.innerHTML = "";
+
+  currentImages.forEach(img => {
+    slider.innerHTML += `<img class="slide" src="${img}">`;
+  });
+
+  updateSlider();
+}
+
+function changeSlide(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) currentIndex = currentImages.length - 1;
+  if (currentIndex >= currentImages.length) currentIndex = 0;
+
+  updateSlider();
+}
+
+function updateSlider() {
+  const slider = document.getElementById("slider");
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+</script>
+</body>
+</html>
